@@ -6,8 +6,8 @@ Created on Tue Apr  5 06:27:23 2022
 """
 
 ''' 
-A program that gets all products from a supermarket. 
-It saves all corresponding macro-nutritions and saves them in an excel file.
+A program that gets all products from a supermarket (Albert Heijn). 
+It saves all useful products with macro-nutritions and saves them in an excel file.
 '''
 import bs4, requests, re, json, time
 import pandas as pd 
@@ -120,6 +120,7 @@ def get_final_page(z):
     
 get_all_first_categories('')
 
+# Deleting all categories which aren't healthy 
 categories_to_use = list(dict.fromkeys(first_categories))
 categories_to_use.pop(15)
 categories_to_use.pop(13)
